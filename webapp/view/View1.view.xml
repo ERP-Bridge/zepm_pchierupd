@@ -1,0 +1,86 @@
+<mvc:View controllerName="zepmpchierupd.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:u="sap.ui.unified"
+    xmlns:core="sap.ui.core"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+    >
+    <headerContent>
+			<!-- Download Template -->
+                        <Button
+                            id="_IDGenButton"
+                            text="{i18n>DownloadTemplate}"
+                            type="Emphasized"
+                            press="onDownloadTemplate"
+                            width="100%"
+                        />
+		</headerContent>
+        <content>
+            <Panel id="_IDGenPanel"
+                width="auto"
+                class="sapUiResponsiveMargin"
+            >
+                <f:SimpleForm
+                    id="SimpleFormChange354"
+                    editable="true"
+                    layout="ResponsiveGridLayout"
+                    title="Informations"
+                    labelSpanXL="3"
+                    labelSpanL="3"
+                    labelSpanM="3"
+                    labelSpanS="12"
+                    adjustLabelSpan="false"
+                    emptySpanXL="4"
+                    emptySpanL="4"
+                    emptySpanM="4"
+                    emptySpanS="0"
+                    columnsXL="1"
+                    columnsL="1"
+                    columnsM="1"
+                    singleContainerFullSize="false"
+                >
+                    <Label id="_IDGenLabel" text="{i18n>Country}" />
+                    <ComboBox
+                        id="IDCountry"
+                        items="{/CountrySet}"
+                    >
+                        <core:Item
+                            key="{CountryCode}"
+                            text="{CountryCode} - {CountryName}"
+                        />
+                    </ComboBox>
+                    <Label id="_IDGenLabel1" text="{i18n>FileLocation}" />
+                    <u:FileUploader
+                        id="fileUploader"
+                        fileType="xlsx"
+                        change=".onFilechange"
+                        width="100%"
+                        useMultipart="false"
+                        sendXHR="true"
+                        placeholder="{i18n>FileUploaderPlaceholder}"
+                        tooltip="{i18n>FileUploaderTooltip}"
+                        uploadUrl="/sap/opu/odata/sap/Z_EPM_PC_HIER_MASS_UPLOAD_SRV/DataUploadSet"
+                        uploadComplete=".handleUploadComplete"
+                    />
+                    <Label id="_IDSimulate" />
+                    <Button id="_IDGenButton1"
+                        text="{i18n>Simulate}"
+                        type="Neutral"
+                        press=".handleUploadPress"
+                    />
+                    <Button id="_IDSubmit"
+                        text="{i18n>Submit}"
+                        type="Success"
+                        press=".handleUploadPress"
+                    />
+                </f:SimpleForm>
+            </Panel>
+        </content>
+    </Page>
+</mvc:View>
