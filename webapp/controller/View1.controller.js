@@ -69,7 +69,7 @@ sap.ui.define([
 			BusyIndicator.hide();
 			var updSuccess = i18n.getText("UploadSuccess");
 			var simSuccess = i18n.getText("SimulationSuccess");
-			var sMessage = this.buttonText === "X" ?  simSuccess : simSuccess;
+			var sMessage = this.buttonText === "X" ?  updSuccess : simSuccess;
 			if(this.buttonText === "X") {
 			xlsUploader.clear();
 			}
