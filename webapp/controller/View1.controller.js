@@ -74,7 +74,7 @@ sap.ui.define([
 			xlsUploader.clear();
 			}
 			if (sStatus >= 200 && sStatus < 300 ) {				
-					MessageBox.success(sMessage); 
+					MessageBox.Information(sMessage); 
                     //{ title: this.buttonText === "X" ?  "Upload Success" : "Simulation Success",
                     // details: xmlResponse || ("HTTP Status: " + (sStatus || "Unknown"))
                 //});				
