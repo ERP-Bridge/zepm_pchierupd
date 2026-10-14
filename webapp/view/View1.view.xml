@@ -1,4 +1,5 @@
-<mvc:View controllerName="zepmpchierupd.controller.View1"
+<mvc:View
+    controllerName="zepmpchierupd.controller.View1"
     xmlns:mvc="sap.ui.core.mvc"
     displayBlock="true"
     xmlns="sap.m"
@@ -11,18 +12,19 @@
         id="page"
         title="{i18n>title}"
     >
-    <headerContent>
-			<!-- Download Template -->
-                        <Button
-                            id="_IDGenButton"
-                            text="{i18n>DownloadTemplate}"
-                            type="Emphasized"
-                            press="onDownloadTemplate"
-                            width="100%"
-                        />
-		</headerContent>
+        <headerContent>
+            <!-- Download Template -->
+            <Button
+                id="_IDGenButton"
+                text="{i18n>DownloadTemplate}"
+                type="Emphasized"
+                press="onDownloadTemplate"
+                width="100%"
+            />
+        </headerContent>
         <content>
-            <Panel id="_IDGenPanel"
+            <Panel
+                id="_IDGenPanel"
                 width="auto"
                 class="sapUiResponsiveMargin"
             >
@@ -45,17 +47,24 @@
                     columnsM="1"
                     singleContainerFullSize="false"
                 >
-                    <Label id="_IDGenLabel" text="{i18n>Country}" />
+                    <Label
+                        id="_IDGenLabel"
+                        text="{i18n>Country}"
+                    />
                     <ComboBox
                         id="IDCountry"
                         items="{/CountrySet}"
                     >
                         <core:Item
+                            id="_IDGenItem"
                             key="{CountryCode}"
                             text="{CountryCode} - {CountryName}"
                         />
                     </ComboBox>
-                    <Label id="_IDGenLabel1" text="{i18n>FileLocation}" />
+                    <Label
+                        id="_IDGenLabel1"
+                        text="{i18n>FileLocation}"
+                    />
                     <u:FileUploader
                         id="fileUploader"
                         fileType="xlsx"
@@ -69,17 +78,24 @@
                         uploadComplete=".handleUploadComplete"
                     />
                     <Label id="_IDSimulate" />
-                    <Button id="_IDGenButton1"
+                    <Button
+                        id="_IDGenButton1"
                         text="{i18n>Simulate}"
                         type="Neutral"
                         press=".handleUploadPress"
                     />
-                    <Button id="_IDSubmit"
+                    <Button
+                        id="_IDSubmit"
                         text="{i18n>Submit}"
                         type="Success"
                         press=".handleUploadPress"
                     />
                 </f:SimpleForm>
+                <CheckBox
+                    id="idSaveActualVersion"
+                    text="Save Actual Version"
+                    selected="true"
+                />
             </Panel>
         </content>
     </Page>
